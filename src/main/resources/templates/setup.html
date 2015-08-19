@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Setup OTP</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<form th:action="@{'/otp/setup'}" method="post" th:object="${otpForm}">
+    <fieldset>
+        <div class="field-group">
+            <img th:src="${otpForm.qrCodeURL}"/>
+        </div>
+    </fieldset>
+    <fieldset>
+        <div class="field-group">
+            <input type="password" name="verificationCode"/>
+        </div>
+    </fieldset>
+
+
+    <div class="buttons-container">
+        <div class="buttons">
+            <input type="submit" value="Submit"/>
+        </div>
+    </div>
+</form>
+</body>
+</html>
